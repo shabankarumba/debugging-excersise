@@ -15,6 +15,6 @@ class Blog
         tag_names << tag.name
       end
     end
-    tag_names.uniq!
+    tag_names.uniq
   end
 end

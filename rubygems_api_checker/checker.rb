@@ -2,6 +2,7 @@ require 'httparty'
 require 'json'
 
 class Checker
+  attr_accessor :gemname
 
   API_URL = "https://rubygems.org/api/v1/search.json"
 
@@ -14,7 +15,7 @@ class Checker
   end
 
   def available?
-    url = "#{API_URL}?query={@gemname}"
+    url = "#{API_URL}?query=#{@gemname}"
     response = HTTParty.get(url)
     JSON.parse(response.body).empty?
   end

@@ -16,9 +16,10 @@ class Basket
   end
 
   def total
+    sum = 0
     @items.each do |item|
-      @total = @total + item.price
+      sum += item.price
     end
-    @total
+    @total = sum
   end
 end
